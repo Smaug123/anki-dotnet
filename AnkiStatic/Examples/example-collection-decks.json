@@ -1,0 +1,59 @@
+{
+  "1": {
+    "desc": "",
+    "name": "Default",
+    "extendRev": 50,
+    "usn": 0,
+    "collapsed": false,
+    "newToday": [
+      0,
+      0
+    ],
+    "timeToday": [
+      0,
+      0
+    ],
+    "dyn": 0,
+    "extendNew": 10,
+    "conf": 1,
+    "revToday": [
+      0,
+      0
+    ],
+    "lrnToday": [
+      0,
+      0
+    ],
+    "id": 1,
+    "mod": 1373473028
+  },
+  "1369508778847": {
+    "name": "Analysis",
+    "extendRev": 50,
+    "usn": -1,
+    "collapsed": false,
+    "mid": "1369511891515",
+    "newToday": [
+      219.0,
+      0
+    ],
+    "timeToday": [
+      219.0,
+      0
+    ],
+    "dyn": 0,
+    "extendNew": 10,
+    "conf": 1,
+    "revToday": [
+      219.0,
+      0
+    ],
+    "lrnToday": [
+      219.0,
+      0
+    ],
+    "id": 1369508778847,
+    "mod": 1373402705,
+    "desc": ""
+  }
+}

@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+import subprocess
+
+def check_fantomas():
+    result = subprocess.run(["dotnet", "tool", "run", "fantomas", "--check", "."])
+    if result.returncode != 0:
+        print(result.stdout)
+        raise Exception(f"Formatting incomplete (return code: {result.returncode}). Consider running `dotnet tool run fantomas .`")
+
+
+def check_alejandra():
+    result = subprocess.run(["alejandra", "--check", "--quiet", "*.nix"])
+    if result.returncode != 0:
+        print(result.stdout)
+        raise Exception(f"Formatting incomplete (return code: {result.returncode}). Consider running `alejandra *.nix`")
+
+
+def main():
+    check_fantomas()
+    check_alejandra()
+
+
+if __name__ == "__main__":
+    main()

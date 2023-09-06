@@ -1,0 +1,16 @@
+{
+  "nextPos": 1,
+  "estTimes": true,
+  "activeDecks": [
+    1
+  ],
+  "sortType": "noteFld",
+  "timeLim": 0,
+  "sortBackwards": false,
+  "addToCur": true,
+  "curDeck": 1,
+  "newSpread": 0,
+  "dueCounts": true,
+  "curModel": "1373473028447",
+  "collapseTime": 1200
+}
