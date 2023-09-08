@@ -8,8 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Utils.fs" />
     <Compile Include="LonghandExample.fs"/>
     <Compile Include="Tests.fs" />
+    <Compile Include="TestJson.fs" />
+    <Compile Include="TestEndToEnd.fs" />
+    <EmbeddedResource Include="example1.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AnkiStatic\AnkiStatic.fsproj"/>
+    <ProjectReference Include="..\AnkiStatic.Lib\AnkiStatic.Lib.fsproj" />
   </ItemGroup>
 
 </Project>

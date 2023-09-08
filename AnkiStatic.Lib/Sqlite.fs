@@ -3,6 +3,7 @@ namespace AnkiStatic
 open System
 open System.Collections.Generic
 open System.IO
+open System.IO.Compression
 open Microsoft.Data.Sqlite
 open System.Threading.Tasks
 
@@ -347,6 +348,68 @@ VALUES (@id, @nid, @did, @ord, @mod, @usn, @type, @queue, @due, @ivl, @factor, @
 
                 if result <> 1 then
                     failwith $"Did not get exactly 1 row back from insertion: %i{result}"
+
+            return ()
+        }
+
+    let writeAll
+        (rng : Random)
+        (collection : CollectionForSql)
+        (notes : SerialisedNote list)
+        (outputFile : FileInfo)
+        : Task<unit>
+        =
+        let renderedNotes, lookupNote =
+            let dict = Dictionary ()
+
+            let buffer = BitConverter.GetBytes (uint64 0)
+
+            let result =
+                notes
+                |> List.mapi (fun i note ->
+                    rng.NextBytes buffer
+                    let guid = BitConverter.ToUInt64 (buffer, 0)
+                    dict.Add (note, i)
+                    SerialisedNote.ToNote guid collection.ModelsInverse note
+                )
+
+            let lookupNote (note : SerialisedNote) : int =
+                match dict.TryGetValue note with
+                | true, v -> v
+                | false, _ ->
+                    failwith
+                        $"A card declared that it was associated with a note, but that note was not inserted.\nDesired: %+A{note}\nAvailable:\n%+A{dict}"
+
+            result, lookupNote
+
+        let tempFile = Path.GetTempFileName () |> FileInfo
+
+        task {
+            let! package = createEmptyPackage tempFile
+
+            let! written = collection.Collection |> createDecks package
+
+            let! noteIds = createNotes written renderedNotes
+
+            let _, _, cards =
+                ((0, 0, []), notes)
+                ||> List.fold (fun (count, iter, cards) note ->
+                    let built =
+                        SerialisedNote.buildCards count note.Deck 1000<ease> Interval.Unset note
+                        |> List.map (Card.translate (fun note -> noteIds.[lookupNote note]) collection.DecksInverse)
+
+                    built.Length + count, iter + 1, built @ cards
+                )
+
+            do! createCards written cards
+
+            use outputStream = outputFile.OpenWrite ()
+            use archive = new ZipArchive (outputStream, ZipArchiveMode.Create, true)
+
+            let entry = archive.CreateEntry "collection.anki2"
+            use entryStream = entry.Open ()
+            use contents = tempFile.OpenRead ()
+            do! contents.CopyToAsync entryStream
 
             return ()
         }

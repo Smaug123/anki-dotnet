@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
 import subprocess
+import sys, os
+current_directory = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, current_directory)
+from format import format_json_file
 
 def check_fantomas():
     result = subprocess.run(["dotnet", "tool", "run", "fantomas", "--check", "."])
@@ -16,9 +20,26 @@ def check_alejandra():
         raise Exception(f"Formatting incomplete (return code: {result.returncode}). Consider running `alejandra *.nix`")
 
 
+def check_json():
+    all_ok = True
+    for root, _, files in os.walk(os.getcwd()):
+        for file in files:
+            # NuGet outputs invalid JSON files :facepalm:
+            if file.endswith(".json") and not file.endswith("project.packagespec.json"):
+                full_path = os.path.join(root, file)
+                is_formatted = format_json_file(full_path, check_only = True)
+                if not is_formatted:
+                    print(f"File {full_path} is not formatted")
+                all_ok = all_ok and is_formatted
+
+    if not all_ok:
+        raise Exception(f"Formatting incomplete in JSON files. Consider running `find . -type f -name '*.json' | grep -v 'packagespec.json' | xargs hooks/format.py`")
+
+
 def main():
     check_fantomas()
     check_alejandra()
+    check_json()
 
 
 if __name__ == "__main__":

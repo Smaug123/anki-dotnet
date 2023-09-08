@@ -8,3 +8,5 @@ riderModule.iml
 *.DotSettings
 .profile*
 test.sqlite
+__pycache__/
+.idea

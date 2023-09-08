@@ -3,7 +3,7 @@ namespace AnkiStatic
 open System.Text
 
 [<RequireQualifiedAccess>]
-module Base91 =
+module internal Base91 =
 
     // Replicating the Anki algorithm
     let private chars =

@@ -78,7 +78,7 @@ type ModelType =
 type ModelConfiguration<'Deck> =
     {
         Css : string
-        DeckId : 'Deck
+        DefaultDeckId : 'Deck
         Fields : ModelField list
         /// String which is added to terminate LaTeX expressions
         LatexPost : string
@@ -125,7 +125,7 @@ module ModelConfiguration =
     "vers": %s{vers},
     "name": %s{JsonSerializer.Serialize this.Name},
     "tags": %s{tags},
-    "did": %i{this.DeckId.ToUnixTimeMilliseconds ()},
+    "did": %i{this.DefaultDeckId.ToUnixTimeMilliseconds ()},
     "usn": %i{this.UpdateSequenceNumber},
     "flds": %s{flds},
     "sortf": %i{this.SortField},

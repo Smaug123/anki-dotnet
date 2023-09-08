@@ -1,8 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AnkiStatic", "AnkiStatic\AnkiStatic.fsproj", "{74D45DA0-912E-45B0-9832-EAE763493431}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AnkiStatic.Lib", "AnkiStatic.Lib\AnkiStatic.Lib.fsproj", "{74D45DA0-912E-45B0-9832-EAE763493431}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AnkiStatic.Test", "AnkiStatic.Test\AnkiStatic.Test.fsproj", "{042891EC-592B-443D-B5EA-847AE1FA9E2B}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AnkiStatic", "AnkiStatic\AnkiStatic.fsproj", "{819FF90C-F165-4E9B-96E9-A5BBDA80261E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,9 @@ Global
 		{042891EC-592B-443D-B5EA-847AE1FA9E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{042891EC-592B-443D-B5EA-847AE1FA9E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{042891EC-592B-443D-B5EA-847AE1FA9E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{819FF90C-F165-4E9B-96E9-A5BBDA80261E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{819FF90C-F165-4E9B-96E9-A5BBDA80261E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{819FF90C-F165-4E9B-96E9-A5BBDA80261E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{819FF90C-F165-4E9B-96E9-A5BBDA80261E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,555 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Collection",
+  "description": "An entire Anki collection.",
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+    "reviewConfiguration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "easinessPerEasyReview",
+        "fuzz",
+        "intervalFactor",
+        "maxIntervalDays",
+        "perDay"
+      ],
+      "properties": {
+        "easinessPerEasyReview": {
+          "type": "number",
+          "description": "An extra multiplier applied to a card's Ease when you rate it Easy"
+        },
+        "fuzz": {
+          "type": "number",
+          "description": "Fudge factor to prevent cards which were created and reviewed together from all appearing together. Semantics unknown; observed to be 0.05 in the wild"
+        },
+        "intervalFactor": {
+          "type": "integer",
+          "description": "Multiplication factor applied to the intervals Anki generates; unknown semantics, observed to be 1 in the wild"
+        },
+        "maxIntervalDays": {
+          "type": "integer",
+          "description": "Maximum number of days that can pass between reviews",
+          "minimum": 0
+        },
+        "perDay": {
+          "type": "integer",
+          "description": "Number of cards to review per day",
+          "minimum": 0
+        }
+      }
+    },
+    "lapse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "delays",
+        "leechAction",
+        "leechFails",
+        "minInterval",
+        "multiplier"
+      ],
+      "properties": {
+        "delays": {
+          "type": "array",
+          "description": "Successive delays in days between the learning steps of the cards",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "leechAction": {
+          "enum": [
+            "suspend",
+            "mark"
+          ],
+          "description": "What to do when a card in this deck becomes a leech"
+        },
+        "leechFails": {
+          "type": "integer",
+          "description": "Number of times a review of a card must fail before the card is marked as a leech",
+          "minimum": 0
+        },
+        "minInterval": {
+          "type": "integer",
+          "description": "Lower limit of the new interval after a card is marked leech, in days",
+          "minimum": 1
+        },
+        "multiplier": {
+          "type": "number",
+          "description": "The multiplier applied to a review interval when answering Again.",
+          "minimum": 0
+        }
+      }
+    },
+    "newCardConfiguration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "delays",
+        "initialEase",
+        "intervals",
+        "order",
+        "maxNewPerDay"
+      ],
+      "properties": {
+        "delays": {
+          "type": "array",
+          "description": "The list of successive delays between learning steps of new cards, in minutes",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "initialEase": {
+          "type": "integer",
+          "description": "100x the multiplier for how much the Good button will delay the next review, so 2500 delays the next review 2.5x on a Good review",
+          "minimum": 0
+        },
+        "intervals": {
+          "type": "object",
+          "description": "List of delays when leaving learning mode after pressing the various buttons",
+          "additionalProperties": false,
+          "required": [
+            "good",
+            "easy",
+            "unused"
+          ],
+          "properties": {
+            "good": {
+              "type": "integer",
+              "description": "The delay in days after pressing the Good button",
+              "minimum": 0
+            },
+            "easy": {
+              "type": "integer",
+              "description": "The delay in days after pressing the Easy button",
+              "minimum": 0
+            },
+            "unused": {
+              "type": "integer",
+              "description": "An unused delay, probably set this to 7",
+              "minimum": 0
+            }
+          }
+        },
+        "order": {
+          "enum": [
+            "random",
+            "due"
+          ],
+          "description": "How to display new cards - by order of due date, or at random"
+        },
+        "maxNewPerDay": {
+          "description": "How many new cards can be shown per day",
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "A field of a note, holding a single piece of data; a card may ask you to recall a field, for example",
+      "required": [
+        "displayName"
+      ],
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "description": "The name used inside templates to refer to this field"
+        },
+        "rightToLeft": {
+          "type": "boolean"
+        },
+        "sticky": {
+          "type": "boolean"
+        },
+        "fontSize": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "font": {
+          "type": "string",
+          "description": "e.g. Arial"
+        }
+      }
+    },
+    "deckConfiguration": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Configuration of a deck, without any mention of its notes",
+      "required": [
+        "autoPlay",
+        "lapse",
+        "name",
+        "new",
+        "replayQuestionAudioWithAnswer",
+        "review",
+        "showTimer",
+        "maxTimerTimeoutSeconds"
+      ],
+      "properties": {
+        "autoPlay": {
+          "type": "boolean",
+          "description": "Whether to play audio immediately on showing the question"
+        },
+        "lapse": {
+          "description": "What to do with lapsed cards",
+          "$ref": "#/definitions/lapse"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the deck configuration, which as far as I can tell is unused"
+        },
+        "new": {
+          "description": "How to show new cards from the deck",
+          "$ref": "#/definitions/newCardConfiguration"
+        },
+        "replayQuestionAudioWithAnswer": {
+          "type": "boolean",
+          "description": "Whether to replay question audio when the answer is displayed"
+        },
+        "review": {
+          "description": "Configuration governing how card metadata changes with each review",
+          "$ref": "#/definitions/reviewConfiguration"
+        },
+        "showTimer": {
+          "type": "boolean",
+          "description": "Whether to show a timer while cards are open"
+        },
+        "maxTimerTimeoutSeconds": {
+          "type": "integer",
+          "description": "The time in seconds after which to stop the timer",
+          "minimum": 0
+        }
+      }
+    },
+    "standardTemplate": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Each non-cloze note gets turned into `n` cards by applying `n` templates to the note. The template determines which fields get shown where on the card.",
+      "required": [
+        "answerFormat",
+        "questionFormat",
+        "name"
+      ],
+      "properties": {
+        "answerFormat": {
+          "type": "string",
+          "description": "How the answer of this card gets displayed. You can refer to fields of the note with {{FieldName}}.",
+          "example": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Front}}"
+        },
+        "questionFormat": {
+          "type": "string",
+          "description": "How the question of this card gets displayed. You can refer to fields of the note with {{FieldName}}.",
+          "example": "{{Front}}"
+        },
+        "name": {
+          "type": "string",
+          "description": "A display name for this card-template. It'll probably be confusing if you reuse this name across multiple templates in the same card, but I think it's allowed."
+        },
+        "browserAnswerFormat": {
+          "type": "string",
+          "description": "Nobody seems to know what this is, but it's used for displaying the answer in the card browser"
+        },
+        "browserQuestionFormat": {
+          "type": "string",
+          "description": "Nobody seems to know what this is, but it's used for displaying the question in the card browser"
+        }
+      }
+    },
+    "clozeTemplate": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Each cloze note gets turned into `n` cards by removing one of the `n cloze deletions in that card.",
+      "required": [
+        "answerFormat",
+        "questionFormat",
+        "name"
+      ],
+      "properties": {
+        "answerFormat": {
+          "type": "string",
+          "description": "How the answer of this card gets displayed. You can refer to the text generated by deleting a cloze from FieldName with {{cloze:FieldName}}, and other fields with {{FieldName}}.",
+          "example": "{{cloze:Text}}<br>\n{{Extra}}"
+        },
+        "questionFormat": {
+          "type": "string",
+          "description": "How the question of this card gets displayed. You can refer to the text generated by deleting a cloze from FieldName with {{cloze:FieldName}}, and other fields with {{FieldName}}.",
+          "example": "{{cloze:Text}}"
+        },
+        "name": {
+          "type": "string",
+          "description": "A display name for this card-template. It'll probably be confusing if you reuse this name across multiple templates in the same card, but I think it's allowed."
+        },
+        "browserAnswerFormat": {
+          "type": "string",
+          "description": "Nobody seems to know what this is, but it's used for displaying the answer in the card browser"
+        },
+        "browserQuestionFormat": {
+          "type": "string",
+          "description": "Nobody seems to know what this is, but it's used for displaying the question in the card browser"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Metadata governing this entire collection.",
+      "required": [
+        "creationDate",
+        "defaultDeck",
+        "defaultDeckConfiguration",
+        "defaultModelName"
+      ],
+      "properties": {
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Displayed creation date for this collection"
+        },
+        "collapseTimeSeconds": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "If there are no more cards to review now, but the next card in the 'learning' state is due in less than this number of seconds, show it now.",
+          "example": 1200
+        },
+        "timeLimitSeconds": {
+          "type": "integer",
+          "description": "Time-boxing limit when reviewing cards. Whenever this number of seconds elapse, Anki tells you how many card you reviewed. Omit for \"no limit\".",
+          "minimum": 1
+        },
+        "estimateTimes": {
+          "type": "boolean",
+          "description": "Show the next review time above each answer button"
+        },
+        "newSpread": {
+          "enum": [
+            "distribute",
+            "last",
+            "first"
+          ],
+          "description": "How to decide which new cards to present to you"
+        },
+        "showDueCounts": {
+          "type": "boolean",
+          "description": "Show remaining card count above answer buttons"
+        },
+        "sortBackwards": {
+          "type": "boolean",
+          "description": "Whether to show cards in the browser in decreasing order, whatever that means"
+        },
+        "defaultDeck": {
+          "type": "string",
+          "description": "The default deck of this collection, whatever that means. The values must be keys of the `decks` mapping."
+        },
+        "defaultDeckConfiguration": {
+          "description": "Configuration of the default deck",
+          "$ref": "#/definitions/deckConfiguration"
+        },
+        "tags": {
+          "type": "string",
+          "description": "TODO what are the semantics of this",
+          "example": "{}"
+        },
+        "defaultModelName": {
+          "description": "The default model for new cards in this collection. The values must be keys of the `models` mapping",
+          "type": "string"
+        },
+        "nonDefaultDecks": {
+          "type": "object",
+          "description": "TODO"
+        },
+        "nonDefaultDeckConfigurations": {
+          "type": "object",
+          "description": "TODO"
+        }
+      }
+    },
+    "note": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model",
+        "creationDate",
+        "sortFieldValue",
+        "additionalFieldValues",
+        "tags"
+      ],
+      "properties": {
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sortFieldValue": {
+          "type": "string",
+          "description": "The text that appears in the primary (sorting) field of this note"
+        },
+        "additionalFieldValues": {
+          "type": "array",
+          "description": "The text that appears in each non-primary field of this note",
+          "items": {
+            "type": "string"
+          }
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "model": {
+          "type": "string",
+          "description": "The value must be a key of the `models` mapping."
+        }
+      }
+    },
+    "deck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "description",
+        "notes"
+      ],
+      "properties": {
+        "extendedReviewLimit": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "When doing an Extended Review custom study, the number of cards to be reviewed."
+        },
+        "extendedNewCardLimit": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "When doing an Extended New custom study, the number of new cards to be shown."
+        },
+        "collapsed": {
+          "type": "boolean"
+        },
+        "browserCollapsed": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/note"
+          }
+        }
+      }
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sortField",
+        "additionalFields",
+        "type",
+        "name",
+        "templates"
+      ],
+      "properties": {
+        "modificationTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "css": {
+          "type": "string"
+        },
+        "latexPost": {
+          "type": "string"
+        },
+        "latexPre": {
+          "type": "string"
+        },
+        "sortField": {
+          "type": "string",
+          "description": "TODO what relation does this have with Templates?"
+        },
+        "additionalFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "templates": {
+          "type": "array",
+          "description": "These values must be keys of `clozeTemplates` if `type` is \"cloze\", or of `standardTemplates` if `type` is \"standard\".",
+          "items": {
+            "type": "string"
+          }
+        },
+        "type": {
+          "enum": [
+            "cloze",
+            "standard"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name"
+        },
+        "defaultDeck": {
+          "type": "string",
+          "description": "Deck into which new notes under this model are placed by default. The value must be a key of the `decks` mapping."
+        }
+      }
+    }
+  },
+  "required": [
+    "metadata",
+    "standardTemplates",
+    "clozeTemplates",
+    "decks",
+    "fields",
+    "models"
+  ],
+  "properties": {
+    "metadata": {
+      "$ref": "#/definitions/metadata"
+    },
+    "standardTemplates": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "$ref": "#/definitions/standardTemplate"
+        }
+      }
+    },
+    "clozeTemplates": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "$ref": "#/definitions/clozeTemplate"
+        }
+      }
+    },
+    "decks": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "$ref": "#/definitions/deck"
+        }
+      }
+    },
+    "fields": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "$ref": "#/definitions/field"
+        }
+      }
+    },
+    "models": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "$ref": "#/definitions/model"
+        }
+      }
+    }
+  }
+}

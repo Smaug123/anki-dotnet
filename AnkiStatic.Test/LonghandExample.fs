@@ -1,9 +1,7 @@
 namespace AnkiStatic.Test
 
 open System
-open System.Collections.Generic
 open System.IO
-open System.IO.Compression
 open AnkiStatic
 open NUnit.Framework
 
@@ -86,7 +84,7 @@ module Example =
                 SortField = frontField
                 Templates = [ frontTemplate ; backTemplate ]
                 Type = ModelType.Standard
-                Deck = deck
+                DefaultDeck = deck
             }
 
         let textField : SerialisedModelField =
@@ -128,7 +126,7 @@ module Example =
                 SortField = textField
                 Templates = [ clozeTemplate ]
                 Type = ModelType.Cloze
-                Deck = deck
+                DefaultDeck = deck
             }
 
         let example : SerialisedCollection =
@@ -176,7 +174,7 @@ module Example =
                                 EasinessPerEasyReview = 1.3
                                 Fuzz = 0.05
                                 IntervalFactor = 1
-                                MaxInterval = TimeSpan.FromDays 365.0
+                                MaxInterval = TimeSpan.FromDays 36500.0
                                 PerDay = 100
                             }
                         ShowTimer = false
@@ -200,6 +198,7 @@ module Example =
                     ValueOfSortField = "Definition of the logistic function"
                     ValuesOfAdditionalFields = [ @"\(g(z) = \frac{1}{1+e^{-z}}\)" ]
                     CreationDate = DateTimeOffset (2023, 09, 06, 19, 30, 00, TimeSpan.FromHours 1.0)
+                    Deck = deck
                 }
                 {
                     Model = clozeModel
@@ -208,67 +207,15 @@ module Example =
                         "The four perspectives of Ithkuil are {{c1::monadic}}, {{c2::unbounded}}, {{c3::nomic}}, {{c4::abstract}}."
                     ValuesOfAdditionalFields = [ "" ]
                     CreationDate = DateTimeOffset (2023, 09, 06, 19, 30, 00, TimeSpan.FromHours 1.0)
+                    Deck = deck
                 }
             ]
 
-        let renderedNotes, lookupNote =
-            let dict = Dictionary ()
+        let outputFile =
+            Path.GetTempFileName ()
+            |> fun f -> Path.ChangeExtension (f, ".apkg")
+            |> FileInfo
 
-            let rng = Random 1
-            let buffer = BitConverter.GetBytes (uint64 0)
+        Sqlite.writeAll (Random 1) collection notes outputFile |> fun t -> t.Result
 
-            let result =
-                notes
-                |> List.mapi (fun i note ->
-                    rng.NextBytes buffer
-                    let guid = BitConverter.ToUInt64 (buffer, 0)
-                    dict.Add (note, i)
-                    SerialisedNote.ToNote guid collection.ModelsInverse note
-                )
-
-            let lookupNote (note : SerialisedNote) : int =
-                match dict.TryGetValue note with
-                | true, v -> v
-                | false, _ ->
-                    failwith
-                        $"A card declared that it was associated with a note, but that note was not inserted.\nDesired: %+A{note}\nAvailable:\n%+A{dict}"
-
-            result, lookupNote
-
-        let file = Path.GetTempFileName () |> FileInfo
-
-        task {
-            let! package = Sqlite.createEmptyPackage file
-
-            let! written = collection.Collection |> Sqlite.createDecks package
-
-            let! noteIds = Sqlite.createNotes written renderedNotes
-
-            let _, _, cards =
-                ((0, 0, []), notes)
-                ||> List.fold (fun (count, iter, cards) note ->
-                    let built =
-                        SerialisedNote.buildCards count deck 1000<ease> Interval.Unset note
-                        |> List.map (Card.translate (fun note -> noteIds.[lookupNote note]) collection.DecksInverse)
-
-                    built.Length + count, iter + 1, built @ cards
-                )
-
-            do! Sqlite.createCards written cards
-
-            let outputFile =
-                Path.GetTempFileName ()
-                |> fun f -> Path.ChangeExtension (f, ".apkg")
-                |> FileInfo
-
-            use outputStream = outputFile.OpenWrite ()
-            use archive = new ZipArchive (outputStream, ZipArchiveMode.Create, true)
-
-            let entry = archive.CreateEntry "collection.anki2"
-            use entryStream = entry.Open ()
-            use contents = file.OpenRead ()
-            do! contents.CopyToAsync entryStream
-
-            Console.WriteLine $"Written: %s{outputFile.FullName}"
-            return ()
-        }
+        Console.WriteLine $"Written: %s{outputFile.FullName}"

@@ -82,15 +82,23 @@ type SerialisedModel =
         Name : string
         /// Which field the browser uses to sort by
         SortField : SerialisedModelField
+        /// An invariant which is not maintained at construction:
+        /// if the Type is Cloze, then this templates list must have length exactly 1.
         Templates : SerialisedCardTemplate list
         Type : ModelType
-        Deck : SerialisedDeck
+        DefaultDeck : SerialisedDeck
     }
 
     static member ToModel<'Deck> (s : SerialisedModel) (deck : 'Deck) : ModelConfiguration<'Deck> =
+        match s.Type, s.Templates with
+        | ModelType.Cloze, [] -> failwith $"A cloze model must have exactly one template, but got 0: %+A{s}"
+        | ModelType.Cloze, _ :: _ :: _ ->
+            failwith $"A cloze model must have exactly one template, but got at least 2: %+A{s}"
+        | _, _ -> ()
+
         {
             Css = s.Css
-            DeckId = deck
+            DefaultDeckId = deck
             Fields =
                 (s.SortField :: s.AdditionalFields)
                 |> List.mapi SerialisedModelField.ToModelField

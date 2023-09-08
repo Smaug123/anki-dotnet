@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Domain\Deck.fs"/>
+    <Compile Include="Domain\Model.fs"/>
+    <Compile Include="Domain\Note.fs"/>
+    <Compile Include="Domain\Card.fs"/>
+    <Compile Include="Domain\Review.fs"/>
+    <Compile Include="Domain\DeckConfiguration.fs"/>
+    <Compile Include="Domain\CollectionConfiguration.fs"/>
+    <Compile Include="Domain\Collection.fs"/>
+    <Compile Include="Domain\Grave.fs"/>
+    <Compile Include="SerialisedDomain.fs"/>
+    <Compile Include="SerialisedCard.fs" />
+    <Compile Include="SerialisedCollection.fs"/>
+    <Compile Include="JsonDomain.fs" />
+    <Compile Include="Base91.fs" />
+    <Compile Include="Sqlite.fs"/>
+    <Content Include="Examples\example-collection-conf.json"/>
+    <Content Include="Examples\example-collection-models.json"/>
+    <Content Include="Examples\example-collection-decks.json"/>
+    <Content Include="Examples\example-collection-deck-conf.json"/>
+    <Content Include="anki.schema.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SQLite" Version="7.0.10"/>
+  </ItemGroup>
+
+</Project>

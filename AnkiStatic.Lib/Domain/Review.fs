@@ -18,7 +18,7 @@ type ReviewConfiguration =
         $"""{{
     "perDay": %i{this.PerDay},
     "ivlFct": %i{this.IntervalFactor},
-    "maxIvl": %i{int this.MaxInterval.TotalDays * 100},
+    "maxIvl": %i{int this.MaxInterval.TotalDays},
     "minSpace": %i{this.MinSpace},
     "ease4": %f{this.EasinessPerEasyReview},
     "fuzz": %f{this.Fuzz}

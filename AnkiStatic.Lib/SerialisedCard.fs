@@ -1,9 +1,11 @@
 namespace AnkiStatic
 
 open System
+open System.Text.RegularExpressions
 
 type SerialisedNote =
     {
+        Deck : SerialisedDeck
         CreationDate : DateTimeOffset
         Model : SerialisedModel
         Tags : string list
@@ -63,8 +65,17 @@ module SerialisedNote =
             }
 
         let otherCards =
-            note.Model.AdditionalFields
-            |> List.mapi (fun i _field ->
+            let numberOfFields =
+                match note.Model.Type with
+                | ModelType.Cloze ->
+                    // Awful heuristic.
+                    // The first match is the primary field, which has already been counted,
+                    // hence the -1.
+                    Regex.Matches(note.ValueOfSortField, @"\{\{c\d+::(.+?)\}\}").Count - 1
+                | ModelType.Standard -> note.Model.AdditionalFields.Length
+
+            [ 0 .. numberOfFields - 1 ]
+            |> List.map (fun i ->
                 {
                     CreationDate = note.CreationDate
                     NotesId = note

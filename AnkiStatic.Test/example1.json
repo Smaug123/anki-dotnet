@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "creationDate": "2023-09-06T19:30:00+01:00",
+    "collapseTimeSeconds": 1200,
+    "estimateTimes": false,
+    "newSpread": "distribute",
+    "showDueCounts": true,
+    "sortBackwards": false,
+    "defaultDeck": "Analysis",
+    "defaultDeckConfiguration": {
+      "autoPlay": true,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": "suspend",
+        "leechFails": 8,
+        "minInterval": 1,
+        "multiplier": 0
+      },
+      "name": "Default",
+      "new": {
+        "delays": [
+          1,
+          10
+        ],
+        "initialEase": 2500,
+        "intervals": {
+          "good": 1,
+          "easy": 4,
+          "unused": 7
+        },
+        "order": "random",
+        "maxNewPerDay": 20
+      },
+      "replayQuestionAudioWithAnswer": true,
+      "review": {
+        "easinessPerEasyReview": 1.3,
+        "fuzz": 0.05,
+        "intervalFactor": 1,
+        "maxIntervalDays": 36500,
+        "perDay": 100
+      },
+      "showTimer": false,
+      "maxTimerTimeoutSeconds": 60
+    },
+    "nonDefaultDecks": {},
+    "nonDefaultDeckConfigurations": {},
+    "tags": "{}",
+    "defaultModelName": "basicAndReverse"
+  },
+  "standardTemplates": {
+    "front": {
+      "answerFormat": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}",
+      "browserAnswerFormat": "",
+      "browserQuestionFormat": "",
+      "name": "Card 1",
+      "questionFormat": "{{Front}}"
+    },
+    "back": {
+      "answerFormat": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Front}}",
+      "browserAnswerFormat": "",
+      "browserQuestionFormat": "",
+      "name": "Card 2",
+      "questionFormat": "{{Back}}"
+    }
+  },
+  "clozeTemplates": {
+    "clozeTemplate": {
+      "answerFormat": "{{cloze:Text}}<br>\n{{Extra}}",
+      "browserAnswerFormat": "",
+      "browserQuestionFormat": "",
+      "name": "Cloze",
+      "questionFormat": "{{cloze:Text}}"
+    }
+  },
+  "decks": {
+    "Analysis": {
+      "extendedReviewLimit": 50,
+      "extendedNewCardLimit": 10,
+      "collapsed": false,
+      "browserCollapsed": false,
+      "description": "",
+      "notes": [
+        {
+          "tags": [],
+          "sortFieldValue": "Definition of the logistic function",
+          "additionalFieldValues": [
+            "\\(g(z) = \\frac{1}{1+e^{-z}}\\)"
+          ],
+          "creationDate": "2023-09-06T19:30:00+01:00",
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [],
+          "sortFieldValue": "The four perspectives of Ithkuil are {{c1::monadic}}, {{c2::unbounded}}, {{c3::nomic}}, {{c4::abstract}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "creationDate": "2023-09-06T19:30:00.001+01:00",
+          "model": "cloze"
+        }
+      ]
+    }
+  },
+  "fields": {
+    "frontField": {
+      "font": "Arial",
+      "displayName": "Front",
+      "rightToLeft": false,
+      "fontSize": 20,
+      "sticky": false
+    },
+    "backField": {
+      "displayName": "Back",
+      "font": "Arial",
+      "rightToLeft": false,
+      "fontSize": 20,
+      "sticky": false
+    },
+    "text": {
+      "displayName": "Text",
+      "font": "Arial",
+      "rightToLeft": false,
+      "fontSize": 20,
+      "sticky": false
+    },
+    "extra": {
+      "displayName": "Extra",
+      "font": "Arial",
+      "rightToLeft": false,
+      "fontSize": 20,
+      "sticky": false
+    }
+  },
+  "models": {
+    "cloze": {
+      "modificationTime": "2013-07-10T17:17:08.440+01:00",
+      "css": ".card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n\n.cloze {\n font-weight: bold;\n color: blue;\n}",
+      "sortField": "text",
+      "additionalFields": [
+        "extra"
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "Cloze",
+      "templates": [
+        "clozeTemplate"
+      ],
+      "type": "cloze",
+      "defaultDeck": "Analysis"
+    },
+    "basicAndReverse": {
+      "modificationTime": "2013-07-10T17:17:08.445+01:00",
+      "css": ".card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n",
+      "sortField": "frontField",
+      "additionalFields": [
+        "backField"
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "Basic (and reversed card)",
+      "templates": [
+        "front",
+        "back"
+      ],
+      "type": "standard",
+      "defaultDeck": "Analysis"
+    }
+  }
+}

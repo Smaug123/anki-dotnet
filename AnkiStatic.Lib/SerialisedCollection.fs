@@ -51,16 +51,25 @@ module SerialisedCollection =
 
             decks, deckLookup
 
-        let models, modelLookup =
+        let models, modelLookup, _correctedCurrentDate =
             let dict = Dictionary ()
+
+            let defaultModelDate =
+                let mutable currentDate =
+                    fst collection.DefaultModel + TimeSpan.FromMilliseconds 1.0
+
+                while collection.NonDefaultModels.ContainsKey currentDate do
+                    currentDate <- currentDate + TimeSpan.FromMilliseconds 1.0
+
+                currentDate
 
             let models =
                 collection.NonDefaultModels
-                |> Map.add (fst collection.DefaultModel) (snd collection.DefaultModel)
+                |> Map.add defaultModelDate (snd collection.DefaultModel)
                 |> Map.map (fun modelTimestamp v ->
-                    let deckTimestamp, _deck = deckLookup v.Deck
+                    let defaultDeckTimestamp, _deck = deckLookup v.DefaultDeck
                     dict.Add (v, modelTimestamp)
-                    SerialisedModel.ToModel v deckTimestamp
+                    SerialisedModel.ToModel v defaultDeckTimestamp
                 )
 
             let modelLookup (m : SerialisedModel) : DateTimeOffset =
@@ -70,7 +79,7 @@ module SerialisedCollection =
                     failwith
                         $"A note declared that it satisfied a model, but that model was not declared in the model list:\n\nDesired: %+A{m}\n\nAvailable: %+A{dict}"
 
-            models, modelLookup
+            models, modelLookup, defaultModelDate
 
         let defaultDeck, _ = deckLookup collection.DefaultDeck
 
