@@ -373,10 +373,8 @@
       "additionalProperties": false,
       "required": [
         "model",
-        "creationDate",
         "sortFieldValue",
-        "additionalFieldValues",
-        "tags"
+        "additionalFieldValues"
       ],
       "properties": {
         "tags": {

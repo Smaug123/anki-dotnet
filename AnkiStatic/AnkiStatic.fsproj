@@ -7,11 +7,21 @@
 
 
     <ItemGroup>
+      <Compile Include="ArgsCrate.fs" />
+      <Compile Include="Result.fs" />
+      <Compile Include="OutputSchema.fs" />
+      <Compile Include="Render.fs" />
+      <Compile Include="Verify.fs" />
       <Compile Include="Program.fs" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\AnkiStatic.Lib\AnkiStatic.Lib.fsproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Argu" Version="6.1.1" />
+      <PackageReference Include="NJsonSchema" Version="10.9.0" />
     </ItemGroup>
 
 </Project>

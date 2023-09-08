@@ -21,11 +21,12 @@
     <Compile Include="JsonDomain.fs" />
     <Compile Include="Base91.fs" />
     <Compile Include="Sqlite.fs"/>
-    <Content Include="Examples\example-collection-conf.json"/>
-    <Content Include="Examples\example-collection-models.json"/>
-    <Content Include="Examples\example-collection-decks.json"/>
-    <Content Include="Examples\example-collection-deck-conf.json"/>
-    <Content Include="anki.schema.json" />
+    <Compile Include="ConfigSchema.fs" />
+    <None Include="Examples\example-collection-conf.json"/>
+    <None Include="Examples\example-collection-models.json"/>
+    <None Include="Examples\example-collection-decks.json"/>
+    <None Include="Examples\example-collection-deck-conf.json"/>
+    <EmbeddedResource Include="anki.schema.json" />
   </ItemGroup>
 
   <ItemGroup>

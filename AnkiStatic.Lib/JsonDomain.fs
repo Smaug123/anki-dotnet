@@ -2,8 +2,10 @@ namespace AnkiStatic
 
 open System
 open System.Collections.Generic
+open System.IO
 open System.Text.Json
 open System.Text.Json.Serialization
+open System.Threading.Tasks
 
 type private LeechActionJsonConverter () =
     inherit JsonConverter<LeechAction> ()
@@ -129,7 +131,9 @@ module JsonCollection =
             =
             {
                 Deck = deck
-                CreationDate = this.CreationDate |> Option.defaultValue DateTimeOffset.UnixEpoch
+                CreationDate =
+                    this.CreationDate
+                    |> Option.defaultValue (DateTimeOffset.UnixEpoch + TimeSpan.FromSeconds 1.0)
                 Model = models.[this.Model]
                 Tags = this.Tags |> Option.defaultValue []
                 ValueOfSortField = this.SortFieldValue
@@ -254,14 +258,19 @@ module JsonCollection =
             Models : IReadOnlyDictionary<string, JsonModel>
         }
 
-    let internal deserialise (s : string) : JsonCollection =
+    let private options =
         let opts = JsonSerializerOptions ()
         opts.Converters.Add (LeechActionJsonConverter ())
         opts.Converters.Add (NewCardDistributionJsonConverter ())
         opts.Converters.Add (NewCardOrderJsonConverter ())
         opts.Converters.Add (ModelTypeJsonConverter ())
         opts.PropertyNameCaseInsensitive <- true
-        JsonSerializer.Deserialize (s, opts)
+        opts
+
+    let internal deserialiseString (s : string) : JsonCollection = JsonSerializer.Deserialize (s, options)
+
+    let deserialise (utf8Json : Stream) : ValueTask<JsonCollection> =
+        JsonSerializer.DeserializeAsync (utf8Json, options)
 
     let toInternal (collection : JsonCollection) : SerialisedCollection * SerialisedNote list =
         let decks =

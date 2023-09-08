@@ -16,5 +16,7 @@ module TestJson =
         let assembly = typeof<Dummy>.Assembly
         let json = Utils.readResource assembly "example1.json"
 
-        let collection, notes = JsonCollection.deserialise json |> JsonCollection.toInternal
+        let collection, notes =
+            JsonCollection.deserialiseString json |> JsonCollection.toInternal
+
         ()

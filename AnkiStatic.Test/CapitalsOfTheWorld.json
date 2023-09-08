@@ -1,0 +1,5840 @@
+{
+  "metadata": {
+    "creationDate": "2023-09-06T19:30:00+01:00",
+    "collapseTimeSeconds": 1200,
+    "estimateTimes": false,
+    "newSpread": "distribute",
+    "showDueCounts": true,
+    "sortBackwards": false,
+    "defaultDeck": "Geography",
+    "defaultDeckConfiguration": {
+      "autoPlay": true,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": "suspend",
+        "leechFails": 8,
+        "minInterval": 1,
+        "multiplier": 0
+      },
+      "name": "Default",
+      "new": {
+        "delays": [
+          1,
+          10
+        ],
+        "initialEase": 2500,
+        "intervals": {
+          "good": 1,
+          "easy": 4,
+          "unused": 7
+        },
+        "order": "random",
+        "maxNewPerDay": 20
+      },
+      "replayQuestionAudioWithAnswer": true,
+      "review": {
+        "easinessPerEasyReview": 1.3,
+        "fuzz": 0.05,
+        "intervalFactor": 1,
+        "maxIntervalDays": 36500,
+        "perDay": 100
+      },
+      "showTimer": false,
+      "maxTimerTimeoutSeconds": 60
+    },
+    "nonDefaultDecks": {},
+    "nonDefaultDeckConfigurations": {},
+    "tags": "{}",
+    "defaultModelName": "basicAndReverse"
+  },
+  "standardTemplates": {
+    "front": {
+      "answerFormat": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}",
+      "browserAnswerFormat": "",
+      "browserQuestionFormat": "",
+      "name": "Front side",
+      "questionFormat": "{{Front}}"
+    },
+    "back": {
+      "answerFormat": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Front}}",
+      "browserAnswerFormat": "",
+      "browserQuestionFormat": "",
+      "name": "Back side",
+      "questionFormat": "{{Back}}"
+    }
+  },
+  "clozeTemplates": {
+    "clozeTemplate": {
+      "answerFormat": "{{cloze:Text}}<br>\n{{Extra}}",
+      "browserAnswerFormat": "",
+      "browserQuestionFormat": "",
+      "name": "Cloze",
+      "questionFormat": "{{cloze:Text}}"
+    }
+  },
+  "fields": {
+    "frontField": {
+      "font": "Arial",
+      "displayName": "Front",
+      "rightToLeft": false,
+      "fontSize": 20,
+      "sticky": false
+    },
+    "backField": {
+      "displayName": "Back",
+      "font": "Arial",
+      "rightToLeft": false,
+      "fontSize": 20,
+      "sticky": false
+    },
+    "text": {
+      "displayName": "Text",
+      "font": "Arial",
+      "rightToLeft": false,
+      "fontSize": 20,
+      "sticky": false
+    },
+    "extra": {
+      "displayName": "Extra",
+      "font": "Arial",
+      "rightToLeft": false,
+      "fontSize": 20,
+      "sticky": false
+    }
+  },
+  "models": {
+    "cloze": {
+      "css": ".card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n\n.cloze {\n font-weight: bold;\n color: blue;\n}",
+      "sortField": "text",
+      "additionalFields": [
+        "extra"
+      ],
+      "name": "Cloze",
+      "templates": [
+        "clozeTemplate"
+      ],
+      "type": "cloze",
+      "defaultDeck": "Geography"
+    },
+    "basicAndReverse": {
+      "css": ".card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n",
+      "sortField": "frontField",
+      "additionalFields": [
+        "backField"
+      ],
+      "name": "Basic (and reversed card)",
+      "templates": [
+        "front",
+        "back"
+      ],
+      "type": "standard",
+      "defaultDeck": "Geography"
+    }
+  },
+  "decks": {
+    "Geography": {
+      "extendedReviewLimit": 50,
+      "extendedNewCardLimit": 10,
+      "collapsed": false,
+      "browserCollapsed": false,
+      "description": "Geography facts",
+      "notes": [
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Afghanistan",
+          "additionalFieldValues": [
+            "Kabul"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Albania",
+          "additionalFieldValues": [
+            "Tirana"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Algeria",
+          "additionalFieldValues": [
+            "Algiers"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Andorra",
+          "additionalFieldValues": [
+            "Andorra la Vella"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Angola",
+          "additionalFieldValues": [
+            "Luanda"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Antigua and Barbuda",
+          "additionalFieldValues": [
+            "Saint John's"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Argentina",
+          "additionalFieldValues": [
+            "Buenos Aires"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Armenia",
+          "additionalFieldValues": [
+            "Yerevan"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Australia",
+          "additionalFieldValues": [
+            "Canberra"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Austria",
+          "additionalFieldValues": [
+            "Vienna"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Azerbaijan",
+          "additionalFieldValues": [
+            "Baku"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "The Bahamas",
+          "additionalFieldValues": [
+            "Nassau"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Bahrain",
+          "additionalFieldValues": [
+            "Manama"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Barbados",
+          "additionalFieldValues": [
+            "Bridgetown"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Belarus",
+          "additionalFieldValues": [
+            "Minsk"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Belgium",
+          "additionalFieldValues": [
+            "Brussels"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Belize",
+          "additionalFieldValues": [
+            "Belmopan"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Benin",
+          "additionalFieldValues": [
+            "Porto-Novo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Bhutan",
+          "additionalFieldValues": [
+            "Thimphu"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Bolivia",
+          "additionalFieldValues": [
+            "La Paz"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Bosnia and Herzegovina",
+          "additionalFieldValues": [
+            "Sarajevo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Botswana",
+          "additionalFieldValues": [
+            "Gaborone"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Brazil",
+          "additionalFieldValues": [
+            "Brasilia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Brunei",
+          "additionalFieldValues": [
+            "Bandar Seri Begawan"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Bulgaria",
+          "additionalFieldValues": [
+            "Sofia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Burkina Faso",
+          "additionalFieldValues": [
+            "Ouagadougou"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Burundi",
+          "additionalFieldValues": [
+            "Bujumbura"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Cambodia",
+          "additionalFieldValues": [
+            "Phnom Penh"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Cameroon",
+          "additionalFieldValues": [
+            "Yaounde"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Canada",
+          "additionalFieldValues": [
+            "Ottowa"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Cape Verde",
+          "additionalFieldValues": [
+            "Praia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Central African Republic",
+          "additionalFieldValues": [
+            "Bangui"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Chad",
+          "additionalFieldValues": [
+            "N'Djamena"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Chile",
+          "additionalFieldValues": [
+            "Santiago"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "China",
+          "additionalFieldValues": [
+            "Beijing"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Colombia",
+          "additionalFieldValues": [
+            "Bogota"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Comoros",
+          "additionalFieldValues": [
+            "Moroni"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Congo",
+          "additionalFieldValues": [
+            "Brazzaville"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "leech",
+            "world-capitals"
+          ],
+          "sortFieldValue": "Democratic Republic of the Congo",
+          "additionalFieldValues": [
+            "Kinshasa"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Costa Rica",
+          "additionalFieldValues": [
+            "San Jose"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Cote d'Ivoire",
+          "additionalFieldValues": [
+            "Yamoussoukro"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Croatia",
+          "additionalFieldValues": [
+            "Zagreb"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Cuba",
+          "additionalFieldValues": [
+            "Havana"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Cyprus",
+          "additionalFieldValues": [
+            "Nicosia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Czech Republic",
+          "additionalFieldValues": [
+            "Prague"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Denmark",
+          "additionalFieldValues": [
+            "Copenhagen"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Djibouti",
+          "additionalFieldValues": [
+            "Djibouti"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Dominica",
+          "additionalFieldValues": [
+            "Roseau"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Dominican Republic",
+          "additionalFieldValues": [
+            "Santo Domingo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Timor-Leste",
+          "additionalFieldValues": [
+            "Dili"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Ecuador",
+          "additionalFieldValues": [
+            "Quito"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Egypt",
+          "additionalFieldValues": [
+            "Cairo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "El Salvador",
+          "additionalFieldValues": [
+            "San Salvador"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Equatorial Guinea",
+          "additionalFieldValues": [
+            "Malabo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Eritrea",
+          "additionalFieldValues": [
+            "Asmara"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Estonia",
+          "additionalFieldValues": [
+            "Tallinn"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Ethiopia",
+          "additionalFieldValues": [
+            "Addis Ababa"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Fiji",
+          "additionalFieldValues": [
+            "Suva"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Finland",
+          "additionalFieldValues": [
+            "Helsinki"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "France",
+          "additionalFieldValues": [
+            "Paris"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Gabon",
+          "additionalFieldValues": [
+            "Libreville"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "leech",
+            "world-capitals"
+          ],
+          "sortFieldValue": "The Gambia",
+          "additionalFieldValues": [
+            "Banjul"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Georgia",
+          "additionalFieldValues": [
+            "Tbilisi"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Germany",
+          "additionalFieldValues": [
+            "Berlin"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Ghana",
+          "additionalFieldValues": [
+            "Accra"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Greece",
+          "additionalFieldValues": [
+            "Athens"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Grenada",
+          "additionalFieldValues": [
+            "Saint George's"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Guatemala",
+          "additionalFieldValues": [
+            "Guatemala City"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Guinea",
+          "additionalFieldValues": [
+            "Conakry"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Guinea-Bissau",
+          "additionalFieldValues": [
+            "Bissau"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Guyana",
+          "additionalFieldValues": [
+            "Georgetown"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Haiti",
+          "additionalFieldValues": [
+            "Port-au-Prince"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Honduras",
+          "additionalFieldValues": [
+            "Tegucigalpa"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Hungary",
+          "additionalFieldValues": [
+            "Budapest"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Iceland",
+          "additionalFieldValues": [
+            "Reykjavik"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "India",
+          "additionalFieldValues": [
+            "New Delhi"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Indonesia",
+          "additionalFieldValues": [
+            "Jakarta"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Iran",
+          "additionalFieldValues": [
+            "Tehran"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Iraq",
+          "additionalFieldValues": [
+            "Baghdad"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Ireland",
+          "additionalFieldValues": [
+            "Dublin"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Italy",
+          "additionalFieldValues": [
+            "Rome"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Israel",
+          "additionalFieldValues": [
+            "Jerusalem"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Jamaica",
+          "additionalFieldValues": [
+            "Kingston"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Japan",
+          "additionalFieldValues": [
+            "Tokyo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Jordan",
+          "additionalFieldValues": [
+            "Amman"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Kenya",
+          "additionalFieldValues": [
+            "Nairobi"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Kazakhstan",
+          "additionalFieldValues": [
+            "Astana"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Kiribati",
+          "additionalFieldValues": [
+            "Tarawa Atoll"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "North Korea",
+          "additionalFieldValues": [
+            "Pyongyang"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "South Korea",
+          "additionalFieldValues": [
+            "Seoul"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Kosovo",
+          "additionalFieldValues": [
+            "Pristina"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Kuwait",
+          "additionalFieldValues": [
+            "Kuwait City"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Kyrgrzstan",
+          "additionalFieldValues": [
+            "Bishkek"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Laos",
+          "additionalFieldValues": [
+            "Vientiane"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Latvia",
+          "additionalFieldValues": [
+            "Riga"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Lebanon",
+          "additionalFieldValues": [
+            "Beirut"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Lesotho",
+          "additionalFieldValues": [
+            "Maseru"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Liberia",
+          "additionalFieldValues": [
+            "Monrovia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Libya",
+          "additionalFieldValues": [
+            "Tripoli"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Liechtenstein",
+          "additionalFieldValues": [
+            "Vaduz"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Lithuania",
+          "additionalFieldValues": [
+            "Vilnius"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Luxembourg",
+          "additionalFieldValues": [
+            "Luxembourg"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Macedonia",
+          "additionalFieldValues": [
+            "Skopje"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Madagascar",
+          "additionalFieldValues": [
+            "Antananarivo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Malawi",
+          "additionalFieldValues": [
+            "Lilongwe"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Malaysia",
+          "additionalFieldValues": [
+            "Kuala Lumpur"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Maldives",
+          "additionalFieldValues": [
+            "Male"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Mali",
+          "additionalFieldValues": [
+            "Bamako"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Malta",
+          "additionalFieldValues": [
+            "Valletta"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Marshall Islands",
+          "additionalFieldValues": [
+            "Majuro"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "leech",
+            "world-capitals"
+          ],
+          "sortFieldValue": "Mauritania",
+          "additionalFieldValues": [
+            "Nouakchott"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Mauritius",
+          "additionalFieldValues": [
+            "Port Louis"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Mexico",
+          "additionalFieldValues": [
+            "Mexico City"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Micronesia",
+          "additionalFieldValues": [
+            "Palikir"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Moldova",
+          "additionalFieldValues": [
+            "Chisinau"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Monaco",
+          "additionalFieldValues": [
+            "Monaco"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Mongolia",
+          "additionalFieldValues": [
+            "Ulaanbaatar"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Montenegro",
+          "additionalFieldValues": [
+            "Podgorica"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Morocco",
+          "additionalFieldValues": [
+            "Rabat"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Mozambique",
+          "additionalFieldValues": [
+            "Maputo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Myanmar",
+          "additionalFieldValues": [
+            "Rangoon"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Namibia",
+          "additionalFieldValues": [
+            "Windhoek"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Nauru",
+          "additionalFieldValues": [
+            "Yaren District"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Nepal",
+          "additionalFieldValues": [
+            "Kathmandu"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Netherlands",
+          "additionalFieldValues": [
+            "Amsterdam"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "New Zealand",
+          "additionalFieldValues": [
+            "Wellington"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Nicaragua",
+          "additionalFieldValues": [
+            "Managua"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Nigeria",
+          "additionalFieldValues": [
+            "Abuja"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Niger",
+          "additionalFieldValues": [
+            "Niamey"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Norway",
+          "additionalFieldValues": [
+            "Oslo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Oman",
+          "additionalFieldValues": [
+            "Muscat"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Qatar",
+          "additionalFieldValues": [
+            "Doha"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Pakistan",
+          "additionalFieldValues": [
+            "Islamabad"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Palau",
+          "additionalFieldValues": [
+            "Melekeok"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Panama",
+          "additionalFieldValues": [
+            "Panama City"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Papua New Guinea",
+          "additionalFieldValues": [
+            "Port Moresby"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Paraguay",
+          "additionalFieldValues": [
+            "Asuncion"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Peru",
+          "additionalFieldValues": [
+            "Lima"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Phillippines",
+          "additionalFieldValues": [
+            "Manila"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Poland",
+          "additionalFieldValues": [
+            "Warsaw"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Portugal",
+          "additionalFieldValues": [
+            "Lisbon"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Romania",
+          "additionalFieldValues": [
+            "Bucharest"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Russia",
+          "additionalFieldValues": [
+            "Moscow"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Rwanda",
+          "additionalFieldValues": [
+            "Kigali"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Saint Kitts and Nevis",
+          "additionalFieldValues": [
+            "Basseterre"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Saint Lucia",
+          "additionalFieldValues": [
+            "Castries"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Saint Vincent and the Grenadines",
+          "additionalFieldValues": [
+            "Kingstown"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Samoa",
+          "additionalFieldValues": [
+            "Apia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "San Marino",
+          "additionalFieldValues": [
+            "San Marino"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Sao Tome and Principe",
+          "additionalFieldValues": [
+            "Sao Tome"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Saudi Arabia",
+          "additionalFieldValues": [
+            "Riyadh"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Senegal",
+          "additionalFieldValues": [
+            "Dakar"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Serbia",
+          "additionalFieldValues": [
+            "Belgrade"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Seychelles",
+          "additionalFieldValues": [
+            "Victoria"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Sierra Leone",
+          "additionalFieldValues": [
+            "Freetown"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Singapore",
+          "additionalFieldValues": [
+            "Singapore"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Slovakia",
+          "additionalFieldValues": [
+            "Bratislava"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Slovenia",
+          "additionalFieldValues": [
+            "Ljubljana"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Solomon Islands",
+          "additionalFieldValues": [
+            "Honiara"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Somalia",
+          "additionalFieldValues": [
+            "Mogadishu"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "South Africa",
+          "additionalFieldValues": [
+            "Pretoria"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "South Sudan",
+          "additionalFieldValues": [
+            "Juba"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Spain",
+          "additionalFieldValues": [
+            "Madrid"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Sri Lanka",
+          "additionalFieldValues": [
+            "Colombo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Sudan",
+          "additionalFieldValues": [
+            "Khartoum"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Suriname",
+          "additionalFieldValues": [
+            "Paramaribo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Swaziland",
+          "additionalFieldValues": [
+            "Mbabane"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Sweden",
+          "additionalFieldValues": [
+            "Stockholm"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Switzerland",
+          "additionalFieldValues": [
+            "Bern"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Syria",
+          "additionalFieldValues": [
+            "Damascus"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Taiwan",
+          "additionalFieldValues": [
+            "Taipei"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Tajikistan",
+          "additionalFieldValues": [
+            "Dushanbe"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Tanzania",
+          "additionalFieldValues": [
+            "Dodoma"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Thailand",
+          "additionalFieldValues": [
+            "Bangkok"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Togo",
+          "additionalFieldValues": [
+            "Lome"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Tonga",
+          "additionalFieldValues": [
+            "Nuku'alofa"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "leech",
+            "world-capitals"
+          ],
+          "sortFieldValue": "Trinidad and Tobago",
+          "additionalFieldValues": [
+            "Port-of-Spain"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Tunisia",
+          "additionalFieldValues": [
+            "Tunis"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Turkey",
+          "additionalFieldValues": [
+            "Ankara"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Zimbabwe",
+          "additionalFieldValues": [
+            "Harare"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Zambia",
+          "additionalFieldValues": [
+            "Lusaka"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Yemen",
+          "additionalFieldValues": [
+            "Sanaa"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Vietnam",
+          "additionalFieldValues": [
+            "Hanoi"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Venezuela",
+          "additionalFieldValues": [
+            "Caracas"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Vatican City",
+          "additionalFieldValues": [
+            "Vatican City"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Vanuatu",
+          "additionalFieldValues": [
+            "Port-Vila"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Turkmenistan",
+          "additionalFieldValues": [
+            "Ashgabat"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Tuvalu",
+          "additionalFieldValues": [
+            "Vaiaku"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Uganda",
+          "additionalFieldValues": [
+            "Kampala"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Ukraine",
+          "additionalFieldValues": [
+            "Kyiv"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "United Arab Emirates",
+          "additionalFieldValues": [
+            "Abu Dhabi"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "United Kingdom",
+          "additionalFieldValues": [
+            "London"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "United States of America",
+          "additionalFieldValues": [
+            "Washington D.C."
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Uruguay",
+          "additionalFieldValues": [
+            "Montevideo"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Uzbekistan",
+          "additionalFieldValues": [
+            "Tashkent"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "world-capitals"
+          ],
+          "sortFieldValue": "Bangladesh",
+          "additionalFieldValues": [
+            "Dhaka"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::Bakerloo}} line has the colour&nbsp;{{c2::brown}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::Central}} line has the colour&nbsp;{{c2::red}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::Circle}} line has the colour&nbsp;{{c2::yellow}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::District}} line has the colour&nbsp;{{c2::green}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::Hammersmith and City}} line has the colour&nbsp;{{c2::pink}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::Jubilee}} line has the colour&nbsp;{{c2::grey}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::Metropolitan}} line has the colour&nbsp;{{c2::purple}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::Northern}} line has the colour&nbsp;{{c2::black}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::Piccadilly}} line has the colour&nbsp;{{c2::dark blue}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::Victoria}} line has the colour&nbsp;{{c2::light blue}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::Waterloo and City}} line has the colour&nbsp;{{c2::turquoise}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::London Overground}} line has the colour&nbsp;{{c2::dashed orange}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::London Trams}} line has the colour&nbsp;{{c2::dashed green}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "The&nbsp;{{c1::DLR}} line has the colour&nbsp;{{c2::dashed turquoise}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Chesham station is on the {{c1::Metropolitan}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Amersham station is on the {{c1::Metropolitan and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Chalfont and Latimer station is on the {{c1::Metropolitan and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Chorleywood station is on the {{c1::Metropolitan}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Watford station is on the {{c1::Metropolitan}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Rickmansworth station is on the {{c1::Metropolitan}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Moor Park station is on the {{c1::Metropolitan}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Northwood station is on the {{c1::Metropolitan}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Northwood Hills station is on the {{c1::Metropolitan}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Uxbridge station is on the {{c1::Metropolitan and Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Hillingdon station is on the {{c1::Metropolitan and Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Ickenham station is on the {{c1::Metropolitan and Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Ruislip station is on the {{c1::Metropolitan and Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "West Ruislip station is on the {{c1::Central}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Ruislip Manor station is on the {{c1::Metropolitan and Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Watford Junction station is on the {{c1::London Overground and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Watford High Street station is on the {{c1::London Overground}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Bushey station is on the {{c1::London Overground and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Carpenders Park station is on the {{c1::London Overground}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Hatch End station is on the {{c1::London Overground}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Cheshunt station is on the {{c1::London Overground and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Theobalds Grove station is on the {{c1::London Overground}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Turkey Street station is on the {{c1::London Overground}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Epping station is on the {{c1::Central}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Theydon Bois station is on the {{c1::Central}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Debden station is on the {{c1::Central}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Loughton station is on the {{c1::Central}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Romford station is on the {{c1::London Overground, TfL Rail and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Emerson Park station is on the {{c1::London Overground}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Upminster station is on the {{c1::London Overground, District and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Upminster Bridge station is on the {{c1::District}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Hornchurch station is on the {{c1::District}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Elm Park station is on the {{c1::District}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Heathrow terminals are on the {{c1::Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Paddington station is on the {{c1::Bakerloo, Hammersmith and City, Circle, District, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Edgware Road station is on the {{c1::Trick question! There are two: Bakerloo, and Circle/District/Hammersmith+City}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Marylebone station is on the {{c1::Bakerloo and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Baker Street station is on the {{c1::Metropolitan, Hammersmith and City, Circle, Jubilee, and Bakerloo}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Great Portland Street station is on the {{c1::Metropolitan, Circle, and Hammersmith and City}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Euston station is on the {{c1::London Overground, Northern, Victoria, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "King's Cross St. Pancras station is on the {{c1::Victoria, Northern, Piccadilly, Hammersmith and City, Circle, Metropolitan, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Angel station is on the {{c1::Northern}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Hoxton station is on the {{c1::London Overground}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Old Street station is on the {{c1::Northern and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Euston Square station is on the {{c1::Circle, Metropolitan, and Hammersmith and City}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Edgware Road station is on the {{c1::Circle, District, and Hammersmith and City}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Warren Street station is on the {{c1::Victoria and Northern}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Shoreditch High Street station is on the {{c1::London Overground}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Farringdon station is on the {{c1::Hammersmith and City, Circle, Metropolitan, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Regent's Park station is on the {{c1::Bakerloo}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Russell Square station is on the {{c1::Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Bayswater station is on the {{c1::District and Circle}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Goodge Street station is on the {{c1::Northern}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Barbican station is on the {{c1::Hammersmith and City, Circle, and Metropolitan}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Liverpool Street station is on the {{c1::London Overground, Metropolitan, Circle, Hammersmith and City, Central, TFL Rail, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Aldgate East station is on the {{c1::District, and Hammersmith and City}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Moorgate station is on the {{c1::Northern, Hammersmith and City, Circle, Metropolitan, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Bond Street station is on the {{c1::Central and Jubilee}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Oxford Circus station is on the {{c1::Bakerloo, Central, and Victoria}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Tottenham Court Road station is on the {{c1::Central and Northern}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Holborn station is on the {{c1::Central and Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Aldgate station is on the {{c1::Metropolitan and Circle}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Bank station is on the {{c1::Central, Waterloo and City, DLR, Circle, District, and Northern}} line(s).",
+          "additionalFieldValues": [
+            "Bank station is the same as Monument station."
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "St. Paul's station is on the {{c1::Central}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Chancery Lane station is on the {{c1::Central}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Covent Garden station is on the {{c1::Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Marble Arch station is on the {{c1::Central}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Lancaster Gate station is on the {{c1::Central}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Queensway station is on the {{c1::Central}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Notting Hill Gate station is on the {{c1::Central, Circle, and District}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Leicester Square station is on the {{c1::Piccadilly and Northern}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Green Park station is on the {{c1::Jubilee, Victoria and Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Piccadilly Circus station is on the {{c1::Piccadilly and Bakerloo}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Tower Hill station is on the {{c1::Circle, District and DLR}} line(s).",
+          "additionalFieldValues": [
+            "Tower Hill is the same station as Tower Gateway."
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Monument station is on the {{c1::Central, Waterloo and City, DLR, Circle, District and Northern}} line(s).",
+          "additionalFieldValues": [
+            "Monument is the same station as Bank."
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Cannon Street station is on the {{c1::Circle, District, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Charing Cross station is on the {{c1::Northern, Bakerloo, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Mansion House station is on the {{c1::Circle and District}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Hyde Park Corner station is on the {{c1::Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Knightsbridge station is on the {{c1::Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "High Street Kensington station is on the {{c1::Circle and District}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Blackfriars station is on the {{c1::Circle, District and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Temple station is on the {{c1::District and Circle}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Embankment station is on the {{c1::Northern, Bakerloo, Circle and District}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Westminster station is on the {{c1::Jubilee, Circle and District}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "St. James's Park station is on the {{c1::Circle and District}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Victoria station is on the {{c1::Victoria, Circle, District, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Sloane Square station is on the {{c1::Circle and District}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "South Kensington station is on the {{c1::Circle, District, and Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Gloucester Road station is on the {{c1::Piccadilly, District and Circle}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Earl's Court station is on the {{c1::District and Piccadilly}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Pimlico station is on the {{c1::Victoria}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Vauxhall station is on the {{c1::Victoria and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Waterloo station is on the {{c1::Jubilee, Northern, Bakerloo, Waterloo and City, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Southwark station is on the {{c1::Jubilee}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Lambeth North station is on the {{c1::Bakerloo}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Elephant and Castle station is on the {{c1::Northern, Bakerloo, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Borough station is on the {{c1::Northern}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "London Bridge station is on the {{c1::Northern, Jubilee, and National Rail}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Paddington, using the Bakerloo line, you get to&nbsp;{{c1::Warwick Avenue to the west, and Edgware Road to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Paddington, using the Hammersmith and City line, you get to&nbsp;{{c1::Royal Oak to the west, and Edgware Road to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Paddington, using the Circle line, you get to&nbsp;{{c1::Royal Oak to the west, Bayswater to the south, and Edgware Road to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Paddington, using the District line, you get to&nbsp;{{c1::Bayswater to the south, and Edgware Road to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Edgware Road, using the Bakerloo line, you get to&nbsp;{{c1::Paddington to the west, and Marylebone to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Edgware Road, using the Circle line, you get to&nbsp;{{c1::Paddington to the west, and Baker Street to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Edgware Road, using the Hammersmith and City line, you get to&nbsp;{{c1::Paddington to the west, and Baker Street to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Edgware Road, using the District line, you get to&nbsp;{{c1::Paddington to the west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Marylebone, using the Bakerloo line, you get to&nbsp;{{c1::Edgware Road to the west, and Baker Street to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Baker Street, using the Bakerloo line, you get to&nbsp;{{c1::Marylebone to the west, and Regent's Park to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Baker Street, using the Jubilee line, you get to&nbsp;{{c1::St John's Wood to the north, and Bond Street to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Baker Street, using the Metropolitan line, you get to&nbsp;{{c1::Finchley Road to the west, and Great Portland Street to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Baker Street, using the Circle line, you get to&nbsp;{{c1::Edgware Road to the west, and Great Portland Street to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Baker Street, using the Hammersmith and City line, you get to&nbsp;{{c1::Edgware Road to the west, and Great Portland Street to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Great Portland Street, using the Hammersmith and City line, you get to&nbsp;{{c1::Baker Street to the west, and Euston Square to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Great Portland Street, using the Circle line, you get to&nbsp;{{c1::Baker Street to the west, and Euston Square to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Great Portland Street, using the Metropolitan line, you get to&nbsp;{{c1::Baker Street to the west, and Euston Square to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Euston, using the London Overground line, you get to&nbsp;{{c1::South Hampstead to the west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Euston, using the Victoria line, you get to&nbsp;{{c1::King's Cross St Pancras to the east, and Warren Street to the west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Euston, using the Northern line, you get to&nbsp;{{c1::Mornington Crescent or Camden Town to the north, Warren Street along the south-west branch, and King's Cross St Pancras along the south-east branch}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at King's Cross St Pancras, using the Northern line, you get to&nbsp;{{c1::Euston to the west, and Angel to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at King's Cross St Pancras, using the Victoria line, you get to&nbsp;{{c1::Euston to the west, and Highbury &amp; Islington to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at King's Cross St Pancras, using the Circle line, you get to&nbsp;{{c1::Euston Square to the west, and Farringdon to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at King's Cross St Pancras, using the Hammersmith and City line, you get to&nbsp;{{c1::Euston Square to the west, and Farringdon to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at King's Cross St Pancras, using the Metropolitan line, you get to&nbsp;{{c1::Euston Square to the west, and Farringdon to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at King's Cross St Pancras, using the Piccadilly line, you get to&nbsp;{{c1::Caledonian Road to the north-east, and Russell Square to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Hoxton, using the London Overground line, you get to&nbsp;{{c1::Haggerston to the north, and Shoreditch High Street to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Angel, using the Northern line, you get to&nbsp;{{c1::King's Cross St Pancras to the north-west, and Old Street to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Warren Street, using the Northern line, you get to&nbsp;{{c1::Euston to the north, and Goodge Street to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Warren Street, using the Victoria line, you get to&nbsp;{{c1::Euston to the north-east, and Oxford Circus to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Euston Square, using the Hammersmith and City line, you get to&nbsp;{{c1::Great Portland Street to the west, and King's Cross St Pancras to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Euston Square, using the Metropolitan line, you get to&nbsp;{{c1::Great Portland Street to the west, and King's Cross St Pancras to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Euston Square, using the Circle line, you get to&nbsp;{{c1::Great Portland Street to the west, and King's Cross St Pancras to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Farringdon, using the Hammersmith and City line, you get to&nbsp;{{c1::King's Cross St Pancras to the north-west, and Barbican to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Farringdon, using the Metropolitan line, you get to&nbsp;{{c1::King's Cross St Pancras to the north-west, and Barbican to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Farringdon, using the Circle line, you get to&nbsp;{{c1::King's Cross St Pancras to the north-west, and Barbican to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Old Street, using the Northern line, you get to&nbsp;{{c1::Angel to the north-west, and Moorgate to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Shoreditch High Street, using the London Overground, you get to&nbsp;{{c1::Hoxton to the north, and Whitechapel to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Barbican, using the Circle line, you get to&nbsp;{{c1::Farringdon to the north-west, and Moorgate to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Barbican, using the Metropolitan line, you get to&nbsp;{{c1::Farringdon to the north-west, and Moorgate to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Barbican, using the Hammersmith and City line, you get to&nbsp;{{c1::Farringdon to the north-west, and Moorgate to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Russell Square, using the Piccadilly line, you get to&nbsp;{{c1::King's Cross St Pancras to the north, and Holborn to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Regent's Park, using the Bakerloo line, you get to&nbsp;{{c1::Baker Street to the north-west, and Oxford Circus to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Bayswater, using the Circle line, you get to&nbsp;{{c1::Paddington to the north, and Notting Hill Gate to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Bayswater, using the District line, you get to&nbsp;{{c1::Paddington to the north, and Notting Hill Gate to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Goodge Street, using the Northern line, you get to&nbsp;{{c1::Warren Street to the north, and Tottenham Court Road to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Moorgate, using the Northern line, you get to&nbsp;{{c1::Old Street to the north, and Bank to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Moorgate, using the Circle line, you get to&nbsp;{{c1::Barbican to the north-west, and Liverpool Street to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Moorgate, using the Metropolitan line, you get to&nbsp;{{c1::Barbican to the north-west, and Liverpool Street to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Moorgate, using the Hammersmith and City line, you get to&nbsp;{{c1::Barbican to the north-west, and Liverpool Street to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Liverpool Street, using the Circle line, you get to&nbsp;{{c1::Moorgate to the west, and Aldgate to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Liverpool Street, using the Metropolitan line, you get to&nbsp;{{c1::Moorgate to the west, and Aldgate to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Liverpool Street, using the Hammersmith and City line, you get to&nbsp;{{c1::Moorgate to the west, and Aldgate East to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Liverpool Street, using the Central line, you get to&nbsp;{{c1::Bethnal Green to the north-east, and Bank to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Liverpool Street, using the London Overground, you get to&nbsp;{{c1::Bethnal Green to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Liverpool Street, using TFL Rail, you get to&nbsp;{{c1::Stratford to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Aldgate East, using the Hammersmith and City line, you get to&nbsp;{{c1::Liverpool Street to the west, and Whitechapel to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Aldgate East, using the District line, you get to&nbsp;{{c1::Tower Hill to the south-west, and Whitechapel to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Notting Hill Gate, using the Circle line, you get to&nbsp;{{c1::Bayswater to the north, and High Street Kensington to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Notting Hill Gate, using the District line, you get to&nbsp;{{c1::Bayswater to the north, and High Street Kensington to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Notting Hill Gate, using the Central line, you get to&nbsp;{{c1::Holland Park to the west, and Queensway to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Queensway, using the Central line, you get to&nbsp;{{c1::Notting Hill Gate to the west, and Lancaster Gate to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Lancaster Gate, using the Central line, you get to&nbsp;{{c1::Queensway to the west, and Marble Arch to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Marble Arch, using the Central line, you get to&nbsp;{{c1::Lancaster Gate to the south-west, and Bond Street to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Bond Street, using the Central line, you get to&nbsp;{{c1::Marble Arch to the south-west, and Oxford Circus to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Bond Street, using the Jubilee line, you get to&nbsp;{{c1::Baker Street to the north, and Green Park to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Oxford Circus, using the Bakerloo line, you get to&nbsp;{{c1::Regent's Park to the north, and Piccadilly Circus to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Oxford Circus, using the Central line, you get to&nbsp;{{c1::Bond Street to the west, and Tottenham Court Road to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Oxford Circus, using the Victoria line, you get to&nbsp;{{c1::Warren Street to the north-east, and Green Park to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Tottenham Court Road, using the Central line, you get to&nbsp;{{c1::Oxford Circus to the west, and Holborn to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Tottenham Court Road, using the Northern line, you get to&nbsp;{{c1::Goodge Street to the north, and Leicester Square to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Holborn, using the Central line, you get to&nbsp;{{c1::Tottenham Court Road to the west, and Chancery Lane to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Holborn, using the Piccadilly line, you get to&nbsp;{{c1::Russell Square to the north, and Covent Garden to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Chancery Lane, using the Central line, you get to&nbsp;{{c1::Holborn to the west, and St Paul's to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Bank, using the Central line, you get to&nbsp;{{c1::St Paul's to the west, and Liverpool Street to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Bank, using the Waterloo and City line, you get to&nbsp;{{c1::Waterloo to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Bank, using the Northern line, you get to&nbsp;{{c1::Moorgate to the north, and London Bridge to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Bank, using the DLR, you get to&nbsp;{{c1::Shadwell to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Monument, using the Circle line, you get to&nbsp;{{c1::Cannon Street to the west, and Tower Hill to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Monument, using the District line, you get to&nbsp;{{c1::Cannon Street to the west, and Tower Hill to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at St Paul's, using the Central line, you get to&nbsp;{{c1::Chancery Lane to the west, and Bank to the east.}}",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Aldgate, using the Metropolitan line, you get to&nbsp;{{c1::Liverpool Street to the north-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Aldgate, using the Circle line, you get to&nbsp;{{c1::Liverpool Street to the north-west, and Tower Hill to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Tower Hill, using the Circle line, you get to&nbsp;{{c1::Aldgate to the north-east, and Monument to the west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Tower Hill, using the District line, you get to&nbsp;{{c1::Aldgate East to the north-east, and Monument to the west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Tower Gateway, using the DLR line, you get to&nbsp;{{c1::Shadwell to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Cannon Street, using the District line, you get to&nbsp;{{c1::Monument to the north-east, and Mansion House to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Cannon Street, using the Circle line, you get to&nbsp;{{c1::Monument to the north-east, and Mansion House to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Blackfriars, using the District line, you get to&nbsp;{{c1::Mansion House to the north-east, and Temple to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Blackfriars, using the Circle line, you get to&nbsp;{{c1::Mansion House to the north-east, and Temple to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Covent Garden, using the Piccadilly line, you get to&nbsp;{{c1::Holborn to the north-east, and Leicester Square to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Leicester Square, using the Piccadilly line, you get to&nbsp;{{c1::Covent Garden to the north-east, and Piccadilly Circus to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Leicester Square, using the Northern line, you get to&nbsp;{{c1::Tottenham Court Road to the north, and Charing Cross to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Charing Cross, using the Northern line, you get to&nbsp;{{c1::Leicester Square to the north, and Embankment to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Charing Cross, using the Bakerloo line, you get to&nbsp;{{c1::Piccadilly Circus to the north-west, and Embankment to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Embankment, using the Northern line, you get to&nbsp;{{c1::Charing Cross to the north, and Waterloo to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Embankment, using the Bakerloo line, you get to&nbsp;{{c1::Charing Cross to the north, and Waterloo to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Embankment, using the Circle line, you get to&nbsp;{{c1::Westminster to the west, and Temple to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Embankment, using the District line, you get to&nbsp;{{c1::Westminster to the west, and Temple to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Piccadilly Circus, using the Bakerloo line, you get to&nbsp;{{c1::Oxford Circus to the north-west, and Charing Cross to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Piccadilly Circus, using the Piccadilly line, you get to&nbsp;{{c1::Green Park to the west, and Leicester Square to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Green Park, using the Piccadilly line, you get to&nbsp;{{c1::Hyde Park Corner to the west, and Piccadilly Circus to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Green Park, using the Jubilee line, you get to&nbsp;{{c1::Bond Street to the north-west, and Westminster to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Green Park, using the Victoria line, you get to&nbsp;{{c1::Oxford Circus to the north-east, and Victoria to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Westminster, using the Jubilee line, you get to&nbsp;{{c1::Green Park to the north-west, and Waterloo to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Westminster, using the Circle line, you get to&nbsp;{{c1::St James's Park to the west, and Embankment to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Westminster, using the District line, you get to&nbsp;{{c1::St James's Park to the west, and Embankment to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at St James's Park, using the Circle line, you get to&nbsp;{{c1::Victoria to the west, and Westminster to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at St James's Park, using the District line, you get to&nbsp;{{c1::Victoria to the west, and Westminster to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Victoria, using the Circle line, you get to&nbsp;{{c1::Sloane Square to the west, and St James's Park to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Victoria, using the District line, you get to&nbsp;{{c1::Sloane Square to the west, and St James's Park to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Victoria, using the Victoria line, you get to&nbsp;{{c1::Green Park to the north, and Pimlico to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Hyde Park Corner, using the Piccadilly line, you get to&nbsp;{{c1::Knightsbridge to the south-west, and Green Park to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Knightsbridge, using the Piccadilly line, you get to&nbsp;{{c1::South Kensington to the south-west, and Hyde Park Corner to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Sloane Square, using the Circle line, you get to&nbsp;{{c1::South Kensington to the west, and Victoria to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Sloane Square, using the District line, you get to&nbsp;{{c1::South Kensington to the west, and Victoria to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at South Kensington, using the Circle line, you get to&nbsp;{{c1::Gloucester Road to the west, and Sloane Square to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at South Kensington, using the District line, you get to&nbsp;{{c1::Gloucester Road to the west, and Sloane Square to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at South Kensington, using the Piccadilly line, you get to&nbsp;{{c1::Gloucester Road to the west, and Knightsbridge to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at High Street Kensington, using the District line, you get to&nbsp;{{c1::Notting Hill Gate to the north, and Earl's Court to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at High Street Kensington, using the Circle line, you get to&nbsp;{{c1::Notting Hill Gate to the north, and Gloucester Road to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Gloucester Road, using the Circle line, you get to&nbsp;{{c1::South Kensington to the east, and High Street Kensington to the north-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Gloucester Road, using the District line, you get to&nbsp;{{c1::South Kensington to the east, and Earl's Court to the west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Gloucester Road, using the Piccadilly line, you get to&nbsp;{{c1::South Kensington to the east, and Earl's Court to the west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Earl's Court, using the District line, you get to&nbsp;{{c1::Kensington Olympia to the north, West Kensington to the west, High Street Kensington to the north-east, Gloucester Road to the east, and West Brompton to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "leech",
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Earl's Court, using the Piccadilly line, you get to&nbsp;{{c1::Barons Court to the west, and Gloucester Road to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Pimlico, using the Victoria line, you get to&nbsp;{{c1::Victoria to the north, and Vauxhall to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Vauxhall, using the Victoria line, you get to&nbsp;{{c1::Pimlico to the north, and Stockwell to the south-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Waterloo, using the Jubilee line, you get to&nbsp;{{c1::Westminster to the north, and Southwark to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Waterloo, using the Northern line, you get to&nbsp;{{c1::Embankment to the north, and Kennington to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Waterloo, using the Bakerloo line, you get to&nbsp;{{c1::Embankment to the north, and Lambeth North to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Waterloo, using the Waterloo and City line, you get to&nbsp;{{c1::Bank to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Southwark, using the Jubilee line, you get to&nbsp;{{c1::Waterloo to the west, and London Bridge to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Lambeth North, using the Bakerloo line, you get to&nbsp;{{c1::Waterloo to the north, and Elephant and Castle to the south}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Borough, using the Northern line, you get to&nbsp;{{c1::Elephant and Castle to the south-west, and London Bridge to the north-east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at London Bridge, using the Northern line, you get to&nbsp;{{c1::Borough to the south-west, and Monument to the north}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at London Bridge, using the Jubilee line, you get to&nbsp;{{c1::Southwark to the west, and Bermondsey to the east}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Starting at Elephant and Castle, using the Northern line, you get to&nbsp;{{c1::Borough to the north-east, and Kennington to the south-west}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Alabama's capital",
+          "additionalFieldValues": [
+            "Montgomery"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Alaska's capital",
+          "additionalFieldValues": [
+            "Juneau"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Arizona's capital",
+          "additionalFieldValues": [
+            "Phoenix"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Arkansas's capital",
+          "additionalFieldValues": [
+            "Little Rock"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "California's capital",
+          "additionalFieldValues": [
+            "Sacramento"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Colorado's capital",
+          "additionalFieldValues": [
+            "Denver"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Connecticut's capital",
+          "additionalFieldValues": [
+            "Hartford"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Delaware's capital",
+          "additionalFieldValues": [
+            "Dover"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Florida's capital",
+          "additionalFieldValues": [
+            "Tallahassee"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Georgia's capital (US state)",
+          "additionalFieldValues": [
+            "Atlanta"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Hawaii's capital",
+          "additionalFieldValues": [
+            "Honolulu"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Idaho's capital",
+          "additionalFieldValues": [
+            "Boise"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Illinois's capital",
+          "additionalFieldValues": [
+            "Springfield"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Indiana's capital",
+          "additionalFieldValues": [
+            "Indianapolis"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Iowa's capital",
+          "additionalFieldValues": [
+            "Des Moines"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Kansas's capital",
+          "additionalFieldValues": [
+            "Topeka"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Kentucky's capital",
+          "additionalFieldValues": [
+            "Frankfort"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Louisiana's capital",
+          "additionalFieldValues": [
+            "Baton Rouge"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Maine's capital",
+          "additionalFieldValues": [
+            "Augusta"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Maryland's capital",
+          "additionalFieldValues": [
+            "Annapolis"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Massachusetts's capital",
+          "additionalFieldValues": [
+            "Boston"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Michigan's capital",
+          "additionalFieldValues": [
+            "Lansing"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Minnesota's capital",
+          "additionalFieldValues": [
+            "Saint Paul"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Mississippi's capital",
+          "additionalFieldValues": [
+            "Jackson"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Missouri's capital",
+          "additionalFieldValues": [
+            "Jefferson City"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Montana's capital",
+          "additionalFieldValues": [
+            "Helena"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Nebraska's capital",
+          "additionalFieldValues": [
+            "Lincoln"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Nevada's capital",
+          "additionalFieldValues": [
+            "Carson City"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "New Hampshire's capital",
+          "additionalFieldValues": [
+            "Concord"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "New Jersey's capital",
+          "additionalFieldValues": [
+            "Trenton"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "New Mexico's capital",
+          "additionalFieldValues": [
+            "Santa Fe"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "New York's capital",
+          "additionalFieldValues": [
+            "Albany"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "North Carolina's capital",
+          "additionalFieldValues": [
+            "Raleigh"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "leech",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "North Dakota's capital",
+          "additionalFieldValues": [
+            "Bismarck"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Ohio's capital",
+          "additionalFieldValues": [
+            "Columbus"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Oklahoma's capital",
+          "additionalFieldValues": [
+            "Oklahoma City"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Oregon's capital",
+          "additionalFieldValues": [
+            "Salem"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Pennsylvania's capital",
+          "additionalFieldValues": [
+            "Harrisburg"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Rhode Island's capital",
+          "additionalFieldValues": [
+            "Providence"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "leech",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "South Carolina's capital",
+          "additionalFieldValues": [
+            "Columbia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "South Dakota's capital",
+          "additionalFieldValues": [
+            "Pierre"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Tennessee's capital",
+          "additionalFieldValues": [
+            "Nashville"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Texas's capital",
+          "additionalFieldValues": [
+            "Austin"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Utah's capital",
+          "additionalFieldValues": [
+            "Salt Lake City"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Vermont's capital",
+          "additionalFieldValues": [
+            "Montpelier"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Virginia's capital",
+          "additionalFieldValues": [
+            "Richmond"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Washington's capital",
+          "additionalFieldValues": [
+            "Olympia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "West Virginia's capital",
+          "additionalFieldValues": [
+            "Charleston"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Wisconsin's capital",
+          "additionalFieldValues": [
+            "Madison"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-capitals"
+          ],
+          "sortFieldValue": "Wyoming's capital",
+          "additionalFieldValues": [
+            "Cheyenne"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "What is the first US state alphabetically?",
+          "additionalFieldValues": [
+            "Alabama"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Alabama",
+          "additionalFieldValues": [
+            "[first], Alaska"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Alaska",
+          "additionalFieldValues": [
+            "Alabama, Arizona"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Arizona",
+          "additionalFieldValues": [
+            "Alaska, Arkansas"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Arkansas",
+          "additionalFieldValues": [
+            "Arizona, California"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: California",
+          "additionalFieldValues": [
+            "Arkansas, Colorado"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Colorado",
+          "additionalFieldValues": [
+            "California, Connecticut"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Connecticut",
+          "additionalFieldValues": [
+            "Colorado, Delaware"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Delaware",
+          "additionalFieldValues": [
+            "Connecticut, Florida"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Florida",
+          "additionalFieldValues": [
+            "Delaware, Georgia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Georgia",
+          "additionalFieldValues": [
+            "Florida, Hawaii"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Hawaii",
+          "additionalFieldValues": [
+            "Georgia, Idaho"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Idaho",
+          "additionalFieldValues": [
+            "Hawaii, Illinois"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Illinois",
+          "additionalFieldValues": [
+            "Idaho, Indiana"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Indiana",
+          "additionalFieldValues": [
+            "Illinois, Iowa"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Iowa",
+          "additionalFieldValues": [
+            "Indiana, Kansas"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Kansas",
+          "additionalFieldValues": [
+            "Iowa, Kentucky"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Kentucky",
+          "additionalFieldValues": [
+            "Kansas, Louisiana"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Louisiana",
+          "additionalFieldValues": [
+            "Kentucky, Maine"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Maine",
+          "additionalFieldValues": [
+            "Louisiana, Maryland"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Maryland",
+          "additionalFieldValues": [
+            "Maine, Massachusetts"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Massachusetts",
+          "additionalFieldValues": [
+            "Maryland, Michigan"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Michigan",
+          "additionalFieldValues": [
+            "Massachusetts, Minnesota"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Minnesota",
+          "additionalFieldValues": [
+            "Michigan, Mississippi"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Mississippi",
+          "additionalFieldValues": [
+            "Minnesota, Missouri"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Missouri",
+          "additionalFieldValues": [
+            "Mississippi, Montana"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Montana",
+          "additionalFieldValues": [
+            "Missouri, Nebraska"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Nebraska",
+          "additionalFieldValues": [
+            "Montana, Nevada"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Nevada",
+          "additionalFieldValues": [
+            "Nebraska, New Hampshire"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: New Hampshire",
+          "additionalFieldValues": [
+            "Nevada, New Jersey"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: New Jersey",
+          "additionalFieldValues": [
+            "New Hampshire, New Mexico"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: New Mexico",
+          "additionalFieldValues": [
+            "New Jersey, New York"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: New York",
+          "additionalFieldValues": [
+            "New Mexico, North Carolina"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: North Carolina",
+          "additionalFieldValues": [
+            "New York, North Dakota"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: North Dakota",
+          "additionalFieldValues": [
+            "North Carolina, Ohio"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Ohio",
+          "additionalFieldValues": [
+            "North Dakota, Oklahoma"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Oklahoma",
+          "additionalFieldValues": [
+            "Ohio, Oregon"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Oregon",
+          "additionalFieldValues": [
+            "Oklahoma, Pennsylvania"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Pennsylvania",
+          "additionalFieldValues": [
+            "Oregon, Rhode Island"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Rhode Island",
+          "additionalFieldValues": [
+            "Pennsylvania, South Carolina"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: South Carolina",
+          "additionalFieldValues": [
+            "Rhode Island, South Dakota"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: South Dakota",
+          "additionalFieldValues": [
+            "South Carolina, Tennessee"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Tennessee",
+          "additionalFieldValues": [
+            "South Dakota, Texas"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Texas",
+          "additionalFieldValues": [
+            "Tennessee, Utah"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Utah",
+          "additionalFieldValues": [
+            "Texas, Vermont"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Vermont",
+          "additionalFieldValues": [
+            "Utah, Virginia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Virginia",
+          "additionalFieldValues": [
+            "Vermont, Washington"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Washington",
+          "additionalFieldValues": [
+            "Virginia, West Virginia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: West Virginia",
+          "additionalFieldValues": [
+            "Washington, Wisconsin"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Wisconsin",
+          "additionalFieldValues": [
+            "West Virginia, Wyoming"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Alphabetically precedes and succeeds: Wyoming",
+          "additionalFieldValues": [
+            "Wisconsin, [last]"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography",
+            "us-state-list"
+          ],
+          "sortFieldValue": "Which is the last US state alphabetically?",
+          "additionalFieldValues": [
+            "Wyoming"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "american-geography"
+          ],
+          "sortFieldValue": "How many US states are there?",
+          "additionalFieldValues": [
+            "50"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [
+            "london-tube"
+          ],
+          "sortFieldValue": "Croxley station is on the {{c1::Metropolitan}} line(s).",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        },
+        {
+          "tags": [],
+          "sortFieldValue": "What is the lowest lying capital city?",
+          "additionalFieldValues": [
+            "Baku"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [],
+          "sortFieldValue": "In which country does the antipode of New Zealand lie?",
+          "additionalFieldValues": [
+            "In which country does the antipode of Spain lie? "
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [],
+          "sortFieldValue": "Where is Philadelphia?",
+          "additionalFieldValues": [
+            "Pennsylvania"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [],
+          "sortFieldValue": "Where is Angkor Wat?",
+          "additionalFieldValues": [
+            "Cambodia"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [],
+          "sortFieldValue": "Where is Christmas Island?",
+          "additionalFieldValues": [
+            "The Indian Ocean"
+          ],
+          "model": "basicAndReverse"
+        },
+        {
+          "tags": [],
+          "sortFieldValue": "{{c1::Taiwan}} used to be called {{c2::Formosa}}.",
+          "additionalFieldValues": [
+            ""
+          ],
+          "model": "cloze"
+        }
+      ]
+    }
+  }
+}

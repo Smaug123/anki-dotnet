@@ -13,6 +13,7 @@
     <Compile Include="Tests.fs" />
     <Compile Include="TestJson.fs" />
     <Compile Include="TestEndToEnd.fs" />
+    <EmbeddedResource Include="CapitalsOfTheWorld.json" />
     <EmbeddedResource Include="example1.json" />
   </ItemGroup>
 

@@ -12,11 +12,13 @@ module TestEndToEnd =
         end
 
     [<TestCase "example1.json">]
+    [<TestCase "CapitalsOfTheWorld.json">]
     let ``End-to-end test of example1.json`` (fileName : string) =
         let assembly = typeof<Dummy>.Assembly
         let json = Utils.readResource assembly fileName
 
-        let collection, notes = JsonCollection.deserialise json |> JsonCollection.toInternal
+        let collection, notes =
+            JsonCollection.deserialiseString json |> JsonCollection.toInternal
 
         let outputFile =
             Path.GetTempFileName ()
