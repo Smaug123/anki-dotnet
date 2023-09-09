@@ -4,6 +4,7 @@ steps:
     commands:
       - echo 'experimental-features = flakes nix-command' >> /etc/nix/nix.conf
       # Lint
+      - "nix run .#fantomas -- --check ."
       - "nix develop --command bash -c 'dotnet tool restore && ./hooks/pre-push'"
       # Test
       - nix develop --command dotnet -- test
