@@ -39,9 +39,10 @@
             runHook postInstall
           '';
         };
+      fantomas = dotnetTool "fantomas" (builtins.fromJSON (builtins.readFile ./.config/dotnet-tools.json)).tools.fantomas.version "sha256-83RodORaC3rkYfbFMHsYLEtl0+8+akZXcKoSJdgwuUo=";
     in {
       packages = {
-        fantomas = dotnetTool "fantomas" (builtins.fromJSON (builtins.readFile ./.config/dotnet-tools.json)).tools.fantomas.version "sha256-83RodORaC3rkYfbFMHsYLEtl0+8+akZXcKoSJdgwuUo=";
+        fantomas = fantomas;
         fetchDeps = let
           flags = [];
           runtimeIds = ["win-x64"] ++ map (system: pkgs.dotnetCorePackages.systemToDotnetRid system) dotnet-sdk.meta.platforms;
@@ -86,6 +87,28 @@
             then [pkgs.darwin.apple_sdk.frameworks.CoreServices]
             else []
           );
+      };
+      checks = {
+        fantomas = pkgs.stdenvNoCC.mkDerivation {
+          name = "fantomas-check";
+          src = ./.;
+          checkPhase = ''
+            ${fantomas}/bin/fantomas --check .
+          '';
+          installPhase = "mkdir $out";
+          dontBuild = true;
+          doCheck = true;
+        };
+        verify = pkgs.stdenvNoCC.mkDerivation {
+          name = "verify-schema";
+          src = ./.;
+          checkPhase = ''
+            ${self.packages.${system}.default}/bin/AnkiStatic verify AnkiStatic.Test/CapitalsOfTheWorld.json
+          '';
+          installPhase = "mkdir $out";
+          dontBuild = true;
+          doCheck = true;
+        };
       };
     });
 }
