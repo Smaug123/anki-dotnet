@@ -11,5 +11,6 @@ test.sqlite
 __pycache__/
 .idea
 .DS_Store
+.direnv/
 
 /result
