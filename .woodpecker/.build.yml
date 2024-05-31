@@ -1,18 +1,23 @@
-steps:
-  build:
-    image: nixos/nix
-    commands:
-      - echo 'experimental-features = flakes nix-command' >> /etc/nix/nix.conf
-      # Lint
-      - "nix flake check"
-      - "nix develop --command bash -c 'dotnet tool restore && ./hooks/pre-push'"
-      # Test
-      - nix build
-      - nix run . -- verify AnkiStatic.Test/CapitalsOfTheWorld.json
-      - nix develop --command dotnet -- test
-      - nix develop --command dotnet -- test --configuration Release
-
-    when:
-      - event: "push"
-        evaluate: 'CI_COMMIT_BRANCH == CI_REPO_DEFAULT_BRANCH'
-      - event: "pull_request"
+# yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
+{
+    "steps": {
+        "build": {
+            "image": "nixos/nix",
+            "commands": [
+              "echo 'experimental-features = flakes nix-command' >> /etc/nix/nix.conf",
+              # Lint
+              "nix flake check",
+              "nix develop --command bash -c 'dotnet tool restore && ./hooks/pre-push'",
+              # Test
+              "nix build",
+              "nix run . -- verify AnkiStatic.Test/CapitalsOfTheWorld.json",
+              "nix develop --command dotnet -- test",
+              "nix develop --command dotnet -- test --configuration Release"
+            ],
+            "when": [
+                { "event": "push", "evaluate": "CI_COMMIT_BRANCH == CI_REPO_DEFAULT_BRANCH" },
+                { "event": "pull_request" }
+            ]
+        }
+    }
+}
