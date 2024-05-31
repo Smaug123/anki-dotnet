@@ -7,9 +7,7 @@ open FsUnitTyped
 [<TestFixture>]
 module TestJson =
 
-    type private Dummy =
-        class
-        end
+    type private Dummy = class end
 
     [<Test>]
     let ``Can read example`` () =

@@ -7,9 +7,7 @@ open System.IO
 
 [<TestFixture>]
 module TestEndToEnd =
-    type private Dummy =
-        class
-        end
+    type private Dummy = class end
 
     [<TestCase "example1.json">]
     [<TestCase "CapitalsOfTheWorld.json">]

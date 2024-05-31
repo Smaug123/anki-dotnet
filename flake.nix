@@ -16,9 +16,9 @@
       pkgs = nixpkgs.legacyPackages.${system};
       projectFile = "./AnkiStatic/AnkiStatic.fsproj";
       testProjectFile = "./AnkiStatic.Test/AnkiStatic.Test.fsproj";
-      pname = "gitea-repo-config";
-      dotnet-sdk = pkgs.dotnet-sdk_7;
-      dotnet-runtime = pkgs.dotnetCorePackages.runtime_7_0;
+      pname = "anki-static";
+      dotnet-sdk = pkgs.dotnet-sdk_8;
+      dotnet-runtime = pkgs.dotnetCorePackages.runtime_8_0;
       version = "0.1";
       dotnetTool = toolName: toolVersion: sha256:
         pkgs.stdenvNoCC.mkDerivation rec {
@@ -39,38 +39,16 @@
             runHook postInstall
           '';
         };
-      fantomas = dotnetTool "fantomas" (builtins.fromJSON (builtins.readFile ./.config/dotnet-tools.json)).tools.fantomas.version "sha256-83RodORaC3rkYfbFMHsYLEtl0+8+akZXcKoSJdgwuUo=";
+      fantomas = dotnetTool "fantomas" (builtins.fromJSON (builtins.readFile ./.config/dotnet-tools.json)).tools.fantomas.version (builtins.head (builtins.filter (elem: elem.pname == "fantomas") ((import ./nix/deps.nix) {fetchNuGet = x: x;}))).sha256;
     in {
       packages = {
         fantomas = fantomas;
-        fetchDeps = let
-          flags = [];
-          runtimeIds = ["win-x64"] ++ map (system: pkgs.dotnetCorePackages.systemToDotnetRid system) dotnet-sdk.meta.platforms;
-        in
-          pkgs.writeShellScriptBin "fetch-${pname}-deps" (builtins.readFile (pkgs.substituteAll {
-            src = ./nix/fetchDeps.sh;
-            pname = pname;
-            binPath = pkgs.lib.makeBinPath [pkgs.coreutils dotnet-sdk (pkgs.nuget-to-nix.override {inherit dotnet-sdk;})];
-            projectFiles = toString (pkgs.lib.toList projectFile);
-            testProjectFiles = toString (pkgs.lib.toList testProjectFile);
-            rids = pkgs.lib.concatStringsSep "\" \"" runtimeIds;
-            packages = dotnet-sdk.packages;
-            storeSrc = pkgs.srcOnly {
-              src = ./.;
-              pname = pname;
-              version = version;
-            };
-          }));
         default = pkgs.buildDotnetModule {
-          pname = pname;
+          inherit pname version projectFile testProjectFile dotnet-sdk dotnet-runtime;
           name = "anki-static";
-          version = version;
           src = ./.;
-          projectFile = projectFile;
-          nugetDeps = ./nix/deps.nix;
+          nugetDeps = ./nix/deps.nix; # `nix build .#default.passthru.fetch-deps && ./result` and put the result here
           doCheck = true;
-          dotnet-sdk = dotnet-sdk;
-          dotnet-runtime = dotnet-runtime;
         };
       };
       apps = {
@@ -81,7 +59,7 @@
       };
       devShells.default = pkgs.mkShell {
         buildInputs =
-          [pkgs.alejandra pkgs.dotnet-sdk_7 pkgs.python3]
+          [pkgs.alejandra dotnet-sdk pkgs.python3]
           ++ (
             if pkgs.stdenv.isDarwin
             then [pkgs.darwin.apple_sdk.frameworks.CoreServices]
