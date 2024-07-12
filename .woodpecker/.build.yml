@@ -10,6 +10,8 @@
               "nix develop --command bash -c 'dotnet tool restore && ./hooks/pre-push'",
               # Test
               "nix build",
+              # Reproducibility
+              "nix build --rebuild",
               "nix run . -- verify AnkiStatic.Test/CapitalsOfTheWorld.json",
               "nix develop --command dotnet test",
               "nix develop --command dotnet test --configuration Release"
